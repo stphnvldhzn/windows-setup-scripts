@@ -1,0 +1,1 @@
+reg add HKLM\SOFTWARE\Policies\Google\Chrome /v BrowserSignin /t REG_DWORD /D 2 /f

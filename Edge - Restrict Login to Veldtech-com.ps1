@@ -1,0 +1,1 @@
+reg add HKLM\SOFTWARE\Policies\Microsoft\Edge /v RestrictSigninToPattern /t REG_SZ /D .*@veldtech\.com /f

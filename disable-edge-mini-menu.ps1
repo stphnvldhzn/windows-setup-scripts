@@ -1,0 +1,1 @@
+reg add "HKLM\SOFTWARE\Policies\Microsoft\Edge" /v QuickSearchShowMiniMenu /t REG_DWORD /D 0 /f

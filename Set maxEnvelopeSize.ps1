@@ -1,0 +1,1 @@
+reg add HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\WSMAN\Client /v maxEnvelopeSize /t REG_DWORD /D 8192 /f

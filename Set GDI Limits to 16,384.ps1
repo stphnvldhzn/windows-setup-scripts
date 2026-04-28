@@ -1,0 +1,2 @@
+reg add "HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Windows" /v GDIProcessHandleQuota /t REG_DWORD /D 16384 /f
+reg add "HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Windows" /v USERProcessHandleQuota /t REG_DWORD /D 16384 /f

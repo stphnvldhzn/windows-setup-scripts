@@ -1,0 +1,1 @@
+reg add HKLM\SOFTWARE\Policies\Google\Chrome /v RestrictSigninToPattern /t REG_SZ /D .*@veldtech\.com /f
