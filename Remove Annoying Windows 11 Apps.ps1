@@ -1,14 +1,3 @@
-# Self-elevate the script if required
-if (-Not ([Security.Principal.WindowsPrincipal] [Security.Principal.WindowsIdentity]::GetCurrent()).IsInRole([Security.Principal.WindowsBuiltInRole] 'Administrator')) {
- if ([int](Get-CimInstance -Class Win32_OperatingSystem | Select-Object -ExpandProperty BuildNumber) -ge 6000) {
-  $CommandLine = "-File `"" + $MyInvocation.MyCommand.Path + "`" " + $MyInvocation.UnboundArguments
-  Start-Process -FilePath PowerShell.exe -Verb Runas -ArgumentList $CommandLine
-  Exit
- }
-}
-
-# Remainder of script here
-
 # remove provisioning packages
 Get-AppProvisionedPackage -online | Where-Object {$_.packagename -Like "*Clipchamp*"} | Remove-AppxProvisionedPackage -online
 Get-AppProvisionedPackage -online | Where-Object {$_.packagename -Like "*connectedexperience*"} | Remove-AppxProvisionedPackage -online
@@ -80,7 +69,6 @@ Get-AppxPackage Microsoft.Todos -AllUsers | Remove-AppxPackage
 Get-AppxPackage Microsoft.WindowsFeedbackHub -AllUsers | Remove-AppxPackage 
 Get-AppxPackage Microsoft.WindowsMaps  -AllUsers | Remove-AppxPackage
 Get-AppXPackage Microsoft.WindowsSoundRecorder -AllUsers | Remove-AppxPackage
-Get-AppXPackage Microsoft.WindowsStore -AllUsers | Remove-AppxPackage
 Get-AppxPackage Microsoft.XboxGameOverlay   -AllUsers | Remove-AppxPackage
 Get-AppxPackage Microsoft.XboxGamingOverlay -AllUsers | Remove-AppxPackage
 Get-AppxPackage Microsoft.XboxIdentityProvider -AllUsers | Remove-AppxPackage
